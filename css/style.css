@@ -9,6 +9,9 @@ body{
 	font-size:100%;
 	font-family: 'Open Sans', sans-serif;
 }
+.my-account {
+	font-size: 16px;
+}
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;																																												
@@ -2762,3 +2765,4 @@ background: url(../images/social.png) no-repeat 0px 0px;
 		padding: .52em 1em .52em 3em;
 	}
 }
+

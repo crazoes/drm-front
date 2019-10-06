@@ -24,7 +24,6 @@ const resolveWeb3 = (resolve) => {
     web3 = new Web3(provider)
   }
 
-  ethereum.enable()
   resolve(web3)
 }
 

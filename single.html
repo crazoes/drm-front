@@ -22,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         }
     </script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js'></script>
     <!-- bootstrap -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
     <!-- //bootstrap -->
@@ -63,7 +64,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="upload.html">Upload</a>
                     </div>
                     <div class="signin">
-                        <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
                         <!-- pop-up-box -->
                         <script type="text/javascript" src="js/modernizr.custom.min.js"></script>
                         <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
@@ -205,7 +205,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </script>
                     </div>
                     <div class="signin">
-                        <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
                         <div id="small-dialog" class="mfp-hide">
                             <h3>Login</h3>
                             <div class="social-sits">
@@ -311,8 +310,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h3>Etiam molestie nisl eget consequat pharetra</h3>
                     </div>
                     <div class="video-grid">
-                        <iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
-                    </div>
+                        <video controls autoplay> 
+                            <source id="singlesrc" src="" type=""/>
+                        </video>
+                        <script>
+                                const src = document.getElementById('singlesrc');
+                                const params = (new URL(document.location)).searchParams;
+                                const link = params.get('src')
+                                const type = params.get('type')
+                                const hash = link.split('/').pop();
+                                (async () => {
+                                    console.log('afadf')
+                                    console.log(hash);
+                                    //const links = (await axios.get(`http://localhost:5000/v1/${hash}`)).data
+                                    //src.setAttribute('src', `data:${type};base64,${(await axios.get(links[0])).data}`);
+                                    //await new Promise((res, rej) => setTimeout(res(), 1000));
+                                    //src.setAttribute('src', `data:${type};base64,${(await axios.get(links[1])).data}`);
+                                    src.setAttribute('src', `data:${type};base64,${(await axios.get(link)).data}`);
+                                    
+                                })();
+                            </script>
+                </div>
                 </div>
                 <div class="song-grid-right">
                 </div>
@@ -338,12 +356,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul id="myList">
                             <li>
                                 <h4>Published on 15 June 2015</h4>
-                                <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
+                                <div class="heading-right" style="padding-left: 0; margin-left: 0; display: block; padding-top: 0.5em; padding-bottom: 0.5em">
+                                        <a href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
+                                </div><br><br>
+                                            <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
                             </li>
                             <li>
                                 <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
                                 <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-
+        
                                 <div class="load-grids">
                                     <div class="load-grid">
                                         <p>Category</p>
@@ -356,8 +377,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                         </ul>
                     </div>
-                    <a href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
-                </div>
+</div>
 
             </div>
             <div class="col-md-4 single-right">
