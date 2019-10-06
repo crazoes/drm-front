@@ -11,7 +11,7 @@ const getContractInstance = async (web3, contractDefinition) => {
 }
 
 const resolveWeb3 = (resolve) => {
-  let { web3 } = window
+  let { web3, ethereum } = window
   const alreadyInjected = typeof web3 !== 'undefined' // i.e. Mist/Metamask
   const localProvider = `http://localhost:9545`
 
@@ -24,6 +24,7 @@ const resolveWeb3 = (resolve) => {
     web3 = new Web3(provider)
   }
 
+  ethereum.enable()
   resolve(web3)
 }
 
